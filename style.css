@@ -1,54 +1,214 @@
-p
-{
-  font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+p{
+	margin-top:0;
+  size: 1.25rem;
+}
 
-}
-article{
-  text-align: justify;
-}
-img{
-  width:100%;
-}
 body{
-  background-color:#DDE1E4;
-  color:#856084;
-  font-family: sans-serif;
-  font-size: 100%;
-}
-.Links{
-  background-color:#C1CAD6;
-color:#D4ADCF;
-text-align: center;
-}
-a:link {
-  color:#D4ADCF;
-}
-a:visited {
-  color:#84E296;
-}
-.gamebg{
-   height: 100vh;
-   width: 100vh;
-   justify-content:center;
-   align-items:center;
-   margin: 0;
-   background-color:blue;
-      
+  min-height: 100vh;
+  position: relative;
+  width: 100%;
+  /* overflow: hidden; */
+  max-width: 100%;
+  margin: 0;
+  color: rgb(255, 205, 178);
+  background: rgba(109, 104, 117);
+  size: 2.5rem;
 }
 
-#game-board {
-  background-color:#C1CAD6;
-  width:100vmin;
-height: 100vmin;
-display: grid;
-grid-template-rows: repeat(21, 1fr);
-grid-template-columns: repeat(21, 1fr);
+
+#pic{
+  border-radius: 100%;
+  width: 60%;
+
+  margin-left: 2.125rem;
+ 
+
 }
-.snake{
-  background-color: red;
-  border: .25vmin solid black;
+.Border-Image{
+	height: 100%;
+	width: 20%;
+	/* display: inline; */
+	position: absolute;
+	top: 0;
+	left: 0;
+	background-image: url(https://images.unsplash.com/photo-1621528448004-8c980082a419?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=334&q=80);
+  background-repeat: no-repeat;
+  background-size: cover;
+  
 }
-.food{
-  background-color:  #84E296;
-  border: .25vmin solid black;
+.Border-Image-Right{
+	height: 100%;
+	width: 5%;
+	/* display: inline; */
+	position: absolute;
+	top: 0;
+	right: 0;
+	background-image: url(https://images.unsplash.com/photo-1621528448004-8c980082a419?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=334&q=80); 
+  transform: rotate(180deg);
+   background-repeat: no-repeat;
+  background-size: cover;
+}
+.sidebar{
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 5rem;
+  background: rgb(8, 11, 16);
+  padding: 0 1rem;
+  transition: all .7s ease;
+}
+.sidebar.active{
+  width:12rem;
+
+}
+.sidebar .logo_content .logo{
+  color: white;
+  display: flex;
+  height: 3.125rem;
+  width: 100%;
+  align-items: center;
+  opacity: 0;
+  pointer-events: none;
+  transition: all .7s ease;
+}
+.sidebar.active .logo_content .logo{
+  opacity: 1;
+   pointer-events: none;
+}
+.logo_content .logo i{
+  font-size: 2rem;
+  margin-right: .5rem; 
+}
+.logo_content .logo  .logo_name{
+  font-size: 1.5rem;
+  font-weight: 400;
+  margin-left: 2rem;
+
+  
+}
+
+.sidebar #btn{
+  position: relative;
+color: white;
+left: 50%;
+top: .5rem;
+font-size: 1.75rem;
+height: 3.125rem;
+width: 3.125rem;
+text-align: right;
+line-height: 3.125rem;
+transform: translateX(-50%);
+transition: ease;
+}
+.sidebar.active #btn{
+ margin-right: 2rem;
+  transition: ease;
+}
+.sidebar ul{
+margin-top: 3rem;
+}
+.sidebar ul li{
+position: relative;
+height: 3.125rem;
+width: 100%;
+margin: 0 .5rem;
+list-style: none;
+line-height: 3.125rem
+}
+.sidebar ul li .tooltip{
+  position: absolute;
+  left: 7.6rem;
+  top: 0;
+  transform: translate(-50%, -50%);
+  border-radius: .375rem;
+  height: 2rem;
+  width: 7.6rem;
+  background: black;
+  line-height: 2rem;
+  text-align: center;
+  box-shadow: 0 .3125rem .625rem rgb(6, 30, 71);
+  transition: 0s ;
+  opacity: 0;
+  pointer-events: none;
+  display: block;
+}
+.sidebar.active ul li .tooltip{
+   display: none;
+
+}
+.sidebar ul li:hover .tooltip{
+transition: all .5s ease;
+  top: 50%;
+opacity: 1;
+}
+
+.sidebar ul li a{
+  color: white;
+  display: flex;
+  align-items: center;
+  text-decoration: none;
+  border-radius: .75rem;
+  transition: all .4s ease;
+  white-space: nowrap;
+}
+.sidebar ul li a:hover{
+ color: rgb(212, 86, 67);
+  background: white;
+  padding-left:.75rem ;
+  
+}
+.sidebar ul li  i{
+  height: 3.125rem;
+  min-width: 3.125rem;
+  border-radius: .75rem;
+  line-height: 3.125rem
+}
+.sidebar .links_name{
+  opacity: 0;
+  pointer-events: none;
+  transition: all .5s ease;
+}
+.sidebar.active .links_name{
+  opacity: 1;
+  pointer-events: auto;
+}
+
+
+.content-flow{
+  margin-left: 8rem;
+  padding-top: 50px;
+  margin-right: 10%;
+  padding-bottom: 50px;
+}
+h1{
+  size: 5rem;
+  margin: auto;
+}
+iframe{
+  margin-right:1rem;
+  flex: 1 1 25%;
+}
+.reference1{
+  display: flex;
+}
+.reference2{
+  display: flex;
+}
+.reference3{
+  display: flex;
+}
+h3{
+  flex: 1 1 50%;
+  line-height: 1.75rem;
+  size: 2rem;
+}
+.wrap{
+  text-align: justify;
+  font-size: 1rem;
+margin: 1.75rem;
+}
+img[alt="Hand"]{
+  float: left;
+  margin: 0 1rem
 }
