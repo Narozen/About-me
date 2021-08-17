@@ -1,0 +1,30 @@
+ 
+
+
+    #game-board {
+      background-color: rgba(199, 200, 206);
+      width: 75vmin;
+      height: 75vmin;
+      display: grid;
+      grid-template-rows: repeat(21, 1fr);
+      grid-template-columns: repeat(21, 1fr);
+      align-items: right;
+	  margin-right: auto;
+	  margin-left: auto;
+    }
+    .snake {
+      background-color: rgb(1, 94, 198);
+      border: .25vmin solid black;
+    }
+
+    .food {
+      background-color: hsl(8, 63%, 55%);
+      border: .25vmin solid black;
+    }
+h4{
+  text-align: center;
+  margin-bottom: 1rem;
+}
+p{
+  text-align: center;
+}
